@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--全局setting配置，日志-->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+    <!--定义别名-->
+    <typeAliases>
+        <package name="com.ycp.pojo"/>
+    </typeAliases>
+    <!--分页plugins-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+        <!--使用下面的方式配置参数-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+</configuration>
